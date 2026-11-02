@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My First Tags</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header class="site-header hero-banner">
     <h1>Drew Kirton</h1>
+    <p class="tagline">Welcome to my page!</p>
   </header>
+
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="Kirton_website.html">My First Ever Webpage</a></li>
-      <li><a href="L1_EXEMPLAR.html">About Me!</a></li>
+      <li><a href="L1_EXEMPLAR.html" class="active-link">About Me!</a></li>
     </ul>
   </nav>
-  <main>
-    <section>
+
+  <main class="exemplar-grid">
+    <section class="content-card bio-card">
       <h2>Outdoors Help Me Relax!</h2>
-      <p>I love fishing, and doing anything outdoors!</p>
-      <h3>My Hobbies</h3>
-      <p>Metal Detecting is also an outdoor hobby of mine.</p>
+      <p class="lead-text">I love fishing, and doing anything outdoors!</p>
+      
+      <div class="hobbies-badge-container">
+        <h3>My Hobbies</h3>
+        <ul class="hobby-tags">
+          <li>Fishing</li>
+          <li>Metal Detecting</li>
+          <li>Outdoor Recreation</li>
+        </ul>
+      </div>
+      <p>Metal detecting is also an outdoor hobby of mine.</p>
     </section>
-    <section>
-      <h2>Where I Live</h2>
-      <p>Iowa Rocks!</p>
-      <h3>Family & Friends</h3>
-      <p>The picture on the first page is of my girlfriend and I, her name is Breana.</p>
+
+    <section class="content-card highlight-card">
+      <blockquote class="state-quote">
+        <h2>Iowa Rocks!</h2>
+      </blockquote>
+      
+      <div class="relationship-box">
+        <h3>Family & Friends</h3>
+        <p>The picture on the first page is of my girlfriend and I, her name is Breana.</p>
+      </div>
     </section>
   </main>
-  <footer>
+
+  <footer id="main-footer">
     <p>&copy; 2026 Drew Kirton. All Rights Reserved.</p>
     <p>This was built for my web development assignment.</p>
   </footer>
