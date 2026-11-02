@@ -14,9 +14,19 @@ body {
   line-height: 1.6;
 }
 
+body.original-page {
+  background-color: #89CFF0 !important;
+}
+
 h1, h2, h3 {
   font-family: 'Merriweather', serif;
   color: navy;
+  margin-bottom: 16px;
+}
+
+.page-title {
+  color: #FF0000 !important;
+  font-size: 32px;
   margin-bottom: 16px;
 }
 
@@ -131,4 +141,35 @@ img {
   border-left: 4px solid #002056;
   padding: 16px;
   margin-bottom: 24px;
-  border-radius: 0 8px 8
+  border-radius: 0 8px 8px 0;
+}
+
+.state-quote h2 {
+  margin-bottom: 0;
+}
+
+.relationship-box {
+  border-top: 1px solid #D0E4E2;
+  padding-top: 16px;
+}
+
+@media (min-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    max-width: 1120px;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+  }
+}
