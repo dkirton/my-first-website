@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 body {
   background-color: #e6f4f3;
   color: #120495;
@@ -13,30 +11,25 @@ body {
   font-size: 18px; 
   line-height: 1.6;
 }
-
 body.original-page {
   background-color: #89CFF0 !important;
 }
-
 h1, h2, h3 {
   font-family: 'Merriweather', serif;
   color: navy;
   margin-bottom: 16px;
 }
-
 .page-title {
   color: #FF0000 !important;
   font-size: 32px;
   margin-bottom: 16px;
 }
-
 .site-header {
   background-color: #D0E4E2;
   padding: 24px 16px;
   text-align: center;
   border-bottom: 2px solid #002056;
 }
-
 nav ul {
   list-style: none;
   display: flex;
@@ -45,25 +38,21 @@ nav ul {
   gap: 16px;
   padding: 16px 0;
 }
-
 nav a {
   color: #120495;
   font-weight: 600;
   text-decoration: underline;
   padding: 8px 16px;
 }
-
 nav a:hover {
   background-color: #D0E4E2;
   border-radius: 4px;
 }
-
 nav a.active-link {
   background-color: #D0E4E2;
   border-radius: 4px;
   border-bottom: 2px solid #002056;
 }
-
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -72,14 +61,12 @@ main {
   margin: 32px auto;
   padding: 0 16px;
 }
-
 .content-card {
   background-color: #ffffff;
   padding: 24px;
   border-radius: 8px;
   border: 1px solid #D0E4E2;
 }
-
 img {
   max-width: 100%;
   height: auto;
@@ -87,7 +74,6 @@ img {
   border-radius: 8px;
   margin-top: 16px;
 }
-
 #main-footer {
   text-align: center;
   color: #002056;
@@ -95,7 +81,6 @@ img {
   padding: 24px 16px;
   border-top: 2px solid #D0E4E2;
 }
-
 .tagline {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
@@ -103,14 +88,12 @@ img {
   margin-top: 8px;
   font-style: italic;
 }
-
 .lead-text {
   font-size: 1.15rem;
   font-weight: 600;
   color: #120495;
   margin-bottom: 16px;
 }
-
 .hobby-tags {
   list-style: none;
   display: flex;
@@ -119,7 +102,6 @@ img {
   margin: 12px 0 16px 0;
   padding: 0;
 }
-
 .hobby-tags li {
   background-color: #e6f4f3;
   color: #002056;
@@ -129,13 +111,11 @@ img {
   font-size: 0.9rem;
   font-weight: 600;
 }
-
 .highlight-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .state-quote {
   background-color: #e6f4f3;
   border-left: 4px solid #002056;
@@ -143,33 +123,91 @@ img {
   margin-bottom: 24px;
   border-radius: 0 8px 8px 0;
 }
-
 .state-quote h2 {
   margin-bottom: 0;
 }
-
 .relationship-box {
   border-top: 1px solid #D0E4E2;
   padding-top: 16px;
 }
-
 @media (min-width: 768px) {
   nav ul {
     flex-direction: row;
     justify-content: center;
     gap: 24px;
   }
-
   main {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
 }
-
 @media (min-width: 1200px) {
   main {
     max-width: 1120px;
     grid-template-columns: 2fr 1fr;
     gap: 40px;
   }
+/* Accessible Contact Form */
+.contact-form fieldset {
+  border: 1px solid #D0E4E2;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+.contact-form legend {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  color: #002056;
+  padding: 0 8px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+.form-group label {
+  font-weight: 600;
+  color: #002056;
+  margin-bottom: 4px;
+}
+.form-group input,
+.form-group textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #120495;
+  background-color: #ffffff;
+  border: 2px solid #002056;
+  border-radius: 4px;
+  padding: 8px;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 3px solid #89CFF0;
+  outline-offset: 2px;
+}
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: #B00020;
+  background-color: #FFF8F8;
+}
+.error-message {
+  color: #B00020;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 4px;
+  min-height: 1.2em;
+}
+.submit-btn {
+  background-color: #002056;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background-color: #120495;
 }
