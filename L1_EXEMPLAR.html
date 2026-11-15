@@ -35,7 +35,7 @@
     <aside class="content-card highlight-card">
       <div class="state-quote">
         <h2>Iowa Rocks!</h2>
-      </div>   
+      </div>
       <div class="relationship-box">
         <h3>Family &amp; Friends</h3>
         <p>The picture on the first page is of my girlfriend and I, her name is Breana.</p>
@@ -43,6 +43,27 @@
       <div class="relationship-box">
         <h3>Contact Me</h3>
         <p>Email: <a href="mailto:kdrew698@gmail.com">kdrew698@gmail.com</a></p>
+        <form id="contact-form" class="contact-form" action="mailto:kdrew698@gmail.com" method="post" enctype="text/plain" novalidate>
+          <fieldset>
+            <legend>Send a Message</legend>
+            <div class="form-group">
+              <label for="sender-name">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="sender-name" name="name" required aria-required="true" aria-describedby="name-error">
+              <span id="name-error" class="error-message" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="sender-email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="sender-email" name="email" required aria-required="true" aria-describedby="email-error">
+              <span id="email-error" class="error-message" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="sender-message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="sender-message" name="message" rows="3" required aria-required="true" aria-describedby="message-error"></textarea>
+              <span id="message-error" class="error-message" role="alert"></span>
+            </div>
+            <button type="submit" class="submit-btn">Send</button>
+          </fieldset>
+        </form>
       </div>
     </aside>
   </main>
@@ -50,6 +71,48 @@
     <p>&copy; 2026 Drew Kirton. All Rights Reserved.</p>
     <p>This was built for my web development assignment.</p>
   </footer>
+  <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function (event) {
+      let isValid = true;
+      const nameInput = document.getElementById('sender-name');
+      const nameError = document.getElementById('name-error');
+      if (nameInput.value.trim() === '') {
+        nameInput.setAttribute('aria-invalid', 'true');
+        nameError.textContent = 'Please enter your name.';
+        isValid = false;
+      } else {
+        nameInput.removeAttribute('aria-invalid');
+        nameError.textContent = '';
+      }
+      const emailInput = document.getElementById('sender-email');
+      const emailError = document.getElementById('email-error');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailInput.value.trim())) {
+        emailInput.setAttribute('aria-invalid', 'true');
+        emailError.textContent = 'Please enter a valid email address.';
+        isValid = false;
+      } else {
+        emailInput.removeAttribute('aria-invalid');
+        emailError.textContent = '';
+      }
+      const messageInput = document.getElementById('sender-message');
+      const messageError = document.getElementById('message-error');
+      if (messageInput.value.trim() === '') {
+        messageInput.setAttribute('aria-invalid', 'true');
+        messageError.textContent = 'Please enter a message.';
+        isValid = false;
+      } else {
+        messageInput.removeAttribute('aria-invalid');
+        messageError.textContent = '';
+      }
+      if (!isValid) {
+        event.preventDefault();
+        const firstInvalid = form.querySelector('[aria-invalid="true"]');
+        if (firstInvalid) firstInvalid.focus();
+      }
+    });
+  </script>
 </body>
 </html>
 
